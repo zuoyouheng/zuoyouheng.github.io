@@ -16,7 +16,7 @@ var starting_page = {
     type: jsPsychFullscreen,
     fullscreen_mode: true,
     message: `
-    <p style="font: 16pt 微软雅黑; text-align: left; line-height: 1.6em">
+    <p style="font: 18pt 微软雅黑; text-align: left; line-height: 150%">
         <strong>
             本次实验将在「全屏页面」中进行，为保证最佳效果，请您<br>
             （1）在电脑中进行，使用主流浏览器打开本页面<br>
