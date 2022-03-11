@@ -1,16 +1,68 @@
 // initialization
 
 var jsPsych = initJsPsych({
-    on_finish: function() {
-        jsPsych.data.get().filter({section:'trust_game'}).localSave('csv', `exp_${subject_id}.csv`)
-    // on_finish: function () {
-    //     jsPsych.data.displayData();
+    on_finish: function () {
+        jsPsych.data.get().filter({ section: 'trust_game' }).localSave('csv', `exp_${subject_id}.csv`)
+        // on_finish: function () {
+        //     jsPsych.data.displayData();
     }
 })
 
 const subject_id = jsPsych.randomization.randomID(8)
+const url = "https://raw.githubusercontent.com/zuoyouheng/zuoyouheng.github.io/main/Experiments/materials"
 
 timeline = []
+
+//preload
+
+var preload = {
+    type: jsPsychPreload,
+    images: [
+        `${url}/random_dots_plots/41-1.jpg`,
+        `${url}/random_dots_plots/42-1.jpg`,
+        `${url}/random_dots_plots/43-1.jpg`,
+        `${url}/random_dots_plots/44-1.jpg`,
+        `${url}/random_dots_plots/45-1.jpg`,
+        `${url}/random_dots_plots/46-1.jpg`,
+        `${url}/random_dots_plots/47-1.jpg`,
+        `${url}/random_dots_plots/48-1.jpg`,
+        `${url}/random_dots_plots/49-1.jpg`,
+        `${url}/random_dots_plots/50-1.jpg`,
+        `${url}/random_dots_plots/51-1.jpg`,
+        `${url}/random_dots_plots/52-1.jpg`,
+        `${url}/random_dots_plots/53-1.jpg`,
+        `${url}/random_dots_plots/54-1.jpg`,
+        `${url}/random_dots_plots/55-1.jpg`,
+        `${url}/random_dots_plots/56-1.jpg`,
+        `${url}/random_dots_plots/57-1.jpg`,
+        `${url}/random_dots_plots/58-1.jpg`,
+        `${url}/random_dots_plots/59-1.jpg`,
+        `${url}/random_dots_plots/60-1.jpg`,
+        `${url}/random_dots_plots/41-2.jpg`,
+        `${url}/random_dots_plots/42-2.jpg`,
+        `${url}/random_dots_plots/43-2.jpg`,
+        `${url}/random_dots_plots/44-2.jpg`,
+        `${url}/random_dots_plots/45-2.jpg`,
+        `${url}/random_dots_plots/46-2.jpg`,
+        `${url}/random_dots_plots/47-2.jpg`,
+        `${url}/random_dots_plots/48-2.jpg`,
+        `${url}/random_dots_plots/49-2.jpg`,
+        `${url}/random_dots_plots/50-2.jpg`,
+        `${url}/random_dots_plots/51-2.jpg`,
+        `${url}/random_dots_plots/52-2.jpg`,
+        `${url}/random_dots_plots/53-2.jpg`,
+        `${url}/random_dots_plots/54-2.jpg`,
+        `${url}/random_dots_plots/55-2.jpg`,
+        `${url}/random_dots_plots/56-2.jpg`,
+        `${url}/random_dots_plots/57-2.jpg`,
+        `${url}/random_dots_plots/58-2.jpg`,
+        `${url}/random_dots_plots/59-2.jpg`,
+        `${url}/random_dots_plots/60-2.jpg`,
+        `${url}/trust_game/%E4%BF%A1%E4%BB%BB%E5%8D%9A%E5%BC%88%E6%B5%81%E7%A8%8B%E5%9B%BE.jpg`,
+        `${url}/trust_game/%E7%AE%80%E6%98%93%E6%B5%81%E7%A8%8B%E5%9B%BE.jpg`,
+    ]
+}
+timeline.push(preload)
 
 // fullscreen
 
@@ -99,20 +151,20 @@ var instru_mg = {
 timeline.push(instru_mg)
 
 var timeline_mg = jsPsych.randomization.sampleWithoutReplacement([
-    { n: "45", pl: "materials/random_dots_plots/45-1.jpg", pr: "materials/random_dots_plots/45-2.jpg" },
-    { n: "46", pl: "materials/random_dots_plots/46-1.jpg", pr: "materials/random_dots_plots/46-2.jpg" },
-    { n: "47", pl: "materials/random_dots_plots/47-1.jpg", pr: "materials/random_dots_plots/47-2.jpg" },
-    { n: "49", pl: "materials/random_dots_plots/49-1.jpg", pr: "materials/random_dots_plots/49-2.jpg" },
-    { n: "50", pl: "materials/random_dots_plots/50-1.jpg", pr: "materials/random_dots_plots/50-2.jpg" },
-    { n: "51", pl: "materials/random_dots_plots/51-1.jpg", pr: "materials/random_dots_plots/51-2.jpg" },
-    { n: "52", pl: "materials/random_dots_plots/52-1.jpg", pr: "materials/random_dots_plots/52-2.jpg" },
-    { n: "54", pl: "materials/random_dots_plots/54-1.jpg", pr: "materials/random_dots_plots/54-2.jpg" },
-    { n: "55", pl: "materials/random_dots_plots/55-1.jpg", pr: "materials/random_dots_plots/55-2.jpg" },
-    { n: "56", pl: "materials/random_dots_plots/56-1.jpg", pr: "materials/random_dots_plots/56-2.jpg" },
-    { n: "57", pl: "materials/random_dots_plots/57-1.jpg", pr: "materials/random_dots_plots/57-2.jpg" },
-    { n: "58", pl: "materials/random_dots_plots/58-1.jpg", pr: "materials/random_dots_plots/58-2.jpg" },
-    { n: "59", pl: "materials/random_dots_plots/59-1.jpg", pr: "materials/random_dots_plots/59-2.jpg" },
-    { n: "60", pl: "materials/random_dots_plots/60-1.jpg", pr: "materials/random_dots_plots/60-2.jpg" }
+    { n: "45", pl: `${url}/random_dots_plots/45-1.jpg`, pr: `${url}/random_dots_plots/45-2.jpg` },
+    { n: "46", pl: `${url}/random_dots_plots/46-1.jpg`, pr: `${url}/random_dots_plots/46-2.jpg` },
+    { n: `47`, pl: `${url}/random_dots_plots/47-1.jpg`, pr: `${url}/random_dots_plots/47-2.jpg` },
+    { n: `49`, pl: `${url}/random_dots_plots/49-1.jpg`, pr: `${url}/random_dots_plots/49-2.jpg` },
+    { n: `50`, pl: `${url}/random_dots_plots/50-1.jpg`, pr: `${url}/random_dots_plots/50-2.jpg` },
+    { n: `51`, pl: `${url}/random_dots_plots/51-1.jpg`, pr: `${url}/random_dots_plots/51-2.jpg` },
+    { n: `52`, pl: `${url}/random_dots_plots/52-1.jpg`, pr: `${url}/random_dots_plots/52-2.jpg` },
+    { n: `54`, pl: `${url}/random_dots_plots/54-1.jpg`, pr: `${url}/random_dots_plots/54-2.jpg` },
+    { n: `55`, pl: `${url}/random_dots_plots/55-1.jpg`, pr: `${url}/random_dots_plots/55-2.jpg` },
+    { n: `56`, pl: `${url}/random_dots_plots/56-1.jpg`, pr: `${url}/random_dots_plots/56-2.jpg` },
+    { n: `57`, pl: `${url}/random_dots_plots/57-1.jpg`, pr: `${url}/random_dots_plots/57-2.jpg` },
+    { n: `58`, pl: `${url}/random_dots_plots/58-1.jpg`, pr: `${url}/random_dots_plots/58-2.jpg` },
+    { n: `59`, pl: `${url}/random_dots_plots/59-1.jpg`, pr: `${url}/random_dots_plots/59-2.jpg` },
+    { n: `60`, pl: `${url}/random_dots_plots/60-1.jpg`, pr: `${url}/random_dots_plots/60-2.jpg` }
 ], 8)
 var mg_prac = timeline_mg.slice(0, 3)
 var mg_test = timeline_mg.slice(3,)
@@ -273,7 +325,7 @@ var instru_tg = {
             <p style="font-size:28px;text-align:center">
                 信任博弈流程图
             </p>
-            <img src="materials/trust_game/信任博弈流程图.jpg">
+            <img src= "${url}/trust_game/%E4%BF%A1%E4%BB%BB%E5%8D%9A%E5%BC%88%E6%B5%81%E7%A8%8B%E5%9B%BE.jpg">
             <p style="font-size:36px;text-align:center">
                 <strong>请点击下方按钮或按空格键继续</strong>
             </p>
@@ -299,7 +351,7 @@ var questions = [
 
 var question = {
     type: jsPsychHtmlButtonResponse,
-    stimulus: function(){
+    stimulus: function () {
         return `
         <p style="font-size:36px;text-align:left;line-height:150%">
             为了确保您已经理解了游戏规则，请回答以下问题<br><br>
@@ -308,7 +360,7 @@ var question = {
         `
     },
     choices: ['0元', '10元', '20元'],
-    on_start: function(){
+    on_start: function () {
         wrong = true
     },
     on_finish: function () {
@@ -325,14 +377,14 @@ var check = {
         stimulus: `回答错误，重新回答`,
         choices: ['继续']
     }],
-    conditional_function: function(){
+    conditional_function: function () {
         return wrong
     }
 }
 
 var test = {
     timeline: [question, check],
-    loop_function: function(){
+    loop_function: function () {
         return wrong
     }
 }
@@ -393,7 +445,7 @@ var begin = {
 
 var simple = {
     type: jsPsychHtmlKeyboardResponse,
-    stimulus: '<img src="materials/trust_game/简易流程图.jpg">',
+    stimulus: `<img src= "${url}/trust_game/%E7%AE%80%E6%98%93%E6%B5%81%E7%A8%8B%E5%9B%BE.jpg">`,
     choices: "NO_KEYS",
     trial_duration: 2500,
 }
@@ -416,7 +468,7 @@ var trial_tg = {
         `
     },
     choices: ['不投资', '投资'],
-    data: {membership: jsPsych.timelineVariable('group'), section: 'trust_game', trial_id: function(){return trial_i}},
+    data: { membership: jsPsych.timelineVariable('group'), section: 'trust_game', trial_id: function () { return trial_i } },
 }
 
 var end_tg = {
