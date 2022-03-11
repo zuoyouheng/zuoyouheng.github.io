@@ -1,12 +1,14 @@
 // initialization
 
 var jsPsych = initJsPsych({
-    // on_finish: function() {
-    //     jsPsych.data.get().localSave('csv', `exp_${subject_id}.csv`)
-    on_finish: function () {
-        jsPsych.data.displayData();
+    on_finish: function() {
+        jsPsych.data.get().filter({section:'trust_game'}).localSave('csv', `exp_${subject_id}.csv`)
+    // on_finish: function () {
+    //     jsPsych.data.displayData();
     }
 })
+
+const subject_id = jsPsych.randomization.randomID(8)
 
 timeline = []
 
@@ -413,7 +415,8 @@ var trial_tg = {
             </div>
         `
     },
-    choices: ['投资', '不投资']
+    choices: ['不投资', '投资'],
+    data: {membership: jsPsych.timelineVariable('group'), section: 'trust_game', trial_id: function(){return trial_i}},
 }
 
 var end_tg = {
