@@ -7,7 +7,7 @@ Created on Sat Nov  6 11:02:53 2021
 #%%
 import random
 from random_plots import RandomDotsPlot
-numbers = random.choices(list(range(40, 61)), k=15)
+numbers = range(41, 61)
 for n in numbers:
     n_plus = n + 1
     n_minus = n-1
