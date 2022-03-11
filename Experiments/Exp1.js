@@ -9,7 +9,7 @@ var jsPsych = initJsPsych({
 })
 
 const subject_id = jsPsych.randomization.randomID(8)
-const url = "https://gitee.com/zyyh2020/thesis/raw/master"
+const url = "https://gitee.com/zyyh2020/zuoyouheng.github.io/raw/main/Experiments/materials"
 
 timeline = []
 
