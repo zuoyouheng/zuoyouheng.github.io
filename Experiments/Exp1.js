@@ -58,8 +58,8 @@ var preload = {
         `${url}/random_dots_plots/58-2.jpg`,
         `${url}/random_dots_plots/59-2.jpg`,
         `${url}/random_dots_plots/60-2.jpg`,
-        `${url}/trust_game/%E4%BF%A1%E4%BB%BB%E5%8D%9A%E5%BC%88%E6%B5%81%E7%A8%8B%E5%9B%BE.jpg`,
-        `${url}/trust_game/%E7%AE%80%E6%98%93%E6%B5%81%E7%A8%8B%E5%9B%BE.jpg`,
+        `${url}/trust_game/full.jpg`,
+        `${url}/trust_game/brief.jpg`,
     ]
 }
 timeline.push(preload)
@@ -325,7 +325,7 @@ var instru_tg = {
             <p style="font-size:28px;text-align:center">
                 信任博弈流程图
             </p>
-            <img src= "${url}/trust_game/%E4%BF%A1%E4%BB%BB%E5%8D%9A%E5%BC%88%E6%B5%81%E7%A8%8B%E5%9B%BE.jpg">
+            <img src= "${url}/trust_game/full.jpg">
             <p style="font-size:36px;text-align:center">
                 <strong>请点击下方按钮或按空格键继续</strong>
             </p>
@@ -445,7 +445,7 @@ var begin = {
 
 var simple = {
     type: jsPsychHtmlKeyboardResponse,
-    stimulus: `<img src= "${url}/trust_game/%E7%AE%80%E6%98%93%E6%B5%81%E7%A8%8B%E5%9B%BE.jpg">`,
+    stimulus: `<img src= "${url}/trust_game/brief.jpg">`,
     choices: "NO_KEYS",
     trial_duration: 2500,
 }
