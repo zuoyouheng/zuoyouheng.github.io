@@ -72,7 +72,8 @@ var starting_page = {
     message: `
     <p style="font: 18pt 微软雅黑; text-align: left; line-height: 150%">
         <strong>
-            本次实验将在「全屏页面」中进行，为保证最佳效果，请您<br>
+            接下来将进入本次实验的按键操作部分，时长大约5~10分钟，将在「全屏页面」中进行，<br>
+            为保证最佳效果，请您<br>
             （1）在电脑中进行，使用主流浏览器打开本页面<br>
             &emsp;&emsp;（Chrome、Edge、Firefox、Safari等，不要用IE）<br>
             （2）关闭其他正在运行的程序，或将其最小化<br>
@@ -92,10 +93,10 @@ var greetings = {
     type: jsPsychInstructions,
     pages: [
         `
-        <p style="font-size:36px;text-align:center;line-height:200%">
-            欢迎参加本次实验<br>
-            实验中请勿退出全屏<br>
-            按空格键继续<br>
+        <p style="font-size:36px;text-align:center;line-height:150%;color:#CD0000">
+            <strong>欢迎您参加本次实验</strong></p>
+        <p style="font-size:30px;text-align:center;line-height:150%">
+            请按空格键继续</p>
         <p style="font-size:30px;text-align:center;line-height:150%">
             天津师范大学，2022</p>
         `
