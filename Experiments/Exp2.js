@@ -76,7 +76,7 @@ var starting_page = {
             为保证最佳效果，请您<br>
             （1）在电脑中进行，使用主流浏览器打开本页面<br>
             &emsp;&emsp;（Chrome、Edge、Firefox、Safari等，不要用IE）<br>
-            （2）关闭其他正在运行的程序，或将其最小化<br>
+            （2）关闭其他正在运行的程序，或将其最小化，但是请不要关闭Credamo问卷页面<br>
             （3）将手机调至静音，尽可能减少其他环境噪音干扰<br>
             （4）在实验进行中不要退出全屏<br>
             （5）保持注意力集中，认真完成实验<br>
@@ -345,6 +345,7 @@ var instru_tg = {
                         <ul>
                             <li>如果接受者选择回报，本轮游戏结束，双方的收益都是20元；</li>
                             <li>如果接受者选择独吞，本轮游戏结束，投资者收益0元，接受者收益40元。</li>
+                下一页将为您呈现投资游戏流程图。
                         </ul>
                     </li>
                 </ul>
@@ -449,6 +450,7 @@ var instru_tg2 = {
     button_label_next: '继续',
     key_forward: ' '
 }
+timeline.push(instru_tg2)
 
 var trial_i = 1
 
@@ -510,9 +512,9 @@ var end_tg = {
     stimulus: function () {
         var choice = jsPsych.data.get().last(1).values()[0]
         if (choice.response == 0) {
-            return '<p style="font-size:40px;text-align:center;">您选择投资，对方已完成选择，本轮游戏结束。</p>'
+            return '<p style="font-size:40px;text-align:center;"您选择不投资，本轮游戏结束。</p>'
         } else {
-            return '<p style="font-size:40px;text-align:center;">您选择不投资，本轮游戏结束.</p>'
+            return '<p style="font-size:40px;text-align:center;">您选择投资，对方已完成选择，本轮游戏结束.</p>'
         }
     },
     choice: 'NO_KEYS',
@@ -534,5 +536,14 @@ var trust_game = {
     repetitions: 5
 }
 timeline.push(trust_game)
+
+// debriefing
+
+var debriefing = {
+    type: jsPsychInstructions,
+    pages:[``],
+
+}
+
 
 jsPsych.run(timeline)
