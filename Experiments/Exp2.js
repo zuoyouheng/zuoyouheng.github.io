@@ -2,7 +2,7 @@
 
 var jsPsych = initJsPsych({
     on_finish: function () {
-        jsPsych.data.get().filter({ section: 'trust_game' }).localSave('csv', `exp_${subject_id}.csv`)
+        jsPsych.data.get().filter({ section: 'trust_game' }).localSave('csv', `参与者_${subject_id}.csv`)
         // on_finish: function () {
         //     jsPsych.data.displayData();
     }
@@ -563,8 +563,10 @@ var debriefing = {
             数量估计倾向测试（即鉴别您属于“高估者”或“低估者”的测试）是一个虚假反馈的测试，最终呈现的结果只是随机选取的。而且“高估者”或“低估者”只是一个用来分类的标签，没有任何的实际意义。
         </p>
         <p>
-            最后阶段的“投资游戏”实际上是一种测量信任的方法。因为信任是一种承担风险的行为，因此投资游戏中是否选择投资可以反映出您对于对方的信任程度。本次实验的目的就是比较对于内群体（和你一样的人）以及外群体（和你不同的人）的信任的区别。
+            最后阶段的“投资游戏”实际上是一种测量信任的方法。因为信任是一种承担风险的行为，因此投资游戏中是否选择投资可以反映出您对于对方的信任程度。本次实验的目的就是比较对于内群体（和你一样的人）以及外群体（和你不同的人）的信任的区别。投资游戏并没有真地在进行，我们只会记录您的选择作为实验结果。
         </p>
+        <p>
+            接下来请将浏览器下载的数据文件(文件名为参与者_{随机数字和字母}csv文件，类似于“参与者_6yol3het.csv”)上传到Credamo问卷中。
     </div>
     `],
 
