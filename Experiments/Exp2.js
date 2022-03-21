@@ -537,6 +537,17 @@ var trust_game = {
 }
 timeline.push(trust_game)
 
+var manipulation_check = {
+    type: jsPsychSurveyLikert,
+    questions:[
+        {prompt: '在过去30分钟内，你是否产生过与死亡有关的想法？', name: 'MC1', labels:['1 完全没有', '2', '3', '4', '5', '6', '7 一定有'], required: true},
+        {prompt: '在过去30分钟内，你在多大程度上想到了死亡？', name: 'MC2', labels:['1 非常低或没有', '2', '3', '4', '5', '6', '7 非常高'], required: true},
+    ],
+    preamble: '请回答下面两个问题',
+    button_label: '继续'
+}
+timeline.push(manipulation_check)
+
 // debriefing
 
 var debriefing = {
@@ -551,7 +562,7 @@ var debriefing = {
     </style>
     <div>
         <h1 style="text-align:center">
-            实验结束
+            实验完成
         </h1>
         <p>
             下面为您解释本次实验的真正目的，以及各部分的作用。
