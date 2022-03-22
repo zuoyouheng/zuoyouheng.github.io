@@ -13,6 +13,23 @@ const url = "https://gitee.com/zyyh2020/zuoyouheng.github.io/raw/main/Experiment
 
 timeline = []
 
+var setting = {
+    type: jsPsychCallFunction,
+    func: function () {
+        document.body.style.backgroundColor = 'rgb(256, 256, 256)'
+        document.body.style.fontFamily = '微软雅黑'
+        document.body.onselectstart = function () { return false }
+        document.body.oncontextmenu = function () { return false }
+        document.onkeydown = function () {
+            // 屏蔽键盘按键 (https://www.bejson.com/othertools/keycodes/)
+            if ((event.keyCode in { 27: 'Esc', 116: 'F5', 123: 'F12' }) ||
+                (event.ctrlKey && event.keyCode in { 85: 'U' })
+            ) { return false }
+        }
+    }
+}
+timeline.push(setting)
+
 //preload
 
 var preload = {
@@ -116,10 +133,7 @@ var instru_mg = {
         `
         <div style="width:80%;margin:auto;">
             <p style="font-size:36px;text-align:left;line-height:150%">
-                心理学研究发现,在估计物体的数量时，有一些人的估计值高于实际值，
-                我们称其为<strong><font color="red">“高估者”</font></strong>；  
-                另一些人则相反，称为<strong><font color="red">“低估者”</font></strong>。
-                总人群中高估者和低估者大约各占50%，二者没有优劣之分。接下来我们将通过测试来确定您属于“高估者”或是“低估者”。<br><br>
+                心理学研究发现,在估计物体的数量时，有一些人的估计值高于实际值，我们称其为<strong><font color="red">“高估者”</font></strong>；另一些人则相反，称为<strong><font color="red">“低估者”</font></strong>。总人群中高估者和低估者大约各占50%，二者没有优劣之分。接下来我们将通过测试来确定您属于“高估者”或是“低估者”。<br><br>
             </p>
             <p style="font-size:36px;text-align:center;line-height:150%">
                 <strong>请点击下方按钮或按空格键继续</strong>
@@ -129,12 +143,10 @@ var instru_mg = {
         `
         <div style="width:80%;margin:auto;">
             <p style="font-size:36px;text-align:left;line-height:150%">
-                接下来您将首先看到一个数字，随后是两张图片。请估计哪一张图片中的圆点数量与先前的数字更接近。
-                选择左边的图片请按<strong><font color="red">F键</font></strong>，
-                选择右边的图片请按<strong><font color="red">J键</font></strong>。
-                请根据您的直觉尽快做出判断。接下来是练习。
-                请做好准备，将手指放在<strong><font color="red">F键</font></strong>
-                和<strong><font color="red">J键</font></strong>上。
+                接下来您将首先看到一个数字，随后是两张图片。请估计哪一张图片中的圆点数量与先前的数字更接近。<br>
+                选择左边的图片请按<strong><font color="red">F键</font></strong>，选择右边的图片请按<strong><font color="red">J键</font></strong>。<br>
+                请根据您的直觉尽快做出判断。接下来是练习。<br>
+                请做好准备，将手指放在<strong><font color="red">F键</font></strong>和<strong><font color="red">J键</font></strong>上。
             </p>
             <p style="font-size:36px;text-align:center;line-height:150%">
                 <strong>请点击下方按钮或按空格键继续</strong>
@@ -224,7 +236,7 @@ var instru_mg2 = {
     type: jsPsychInstructions,
     pages: [
         `
-        <div>
+        <div style="width:80%;margin:auto">
             <p style="font-size:36px;text-align:center;line-height:150%">
                 练习结束，接下来是正式测试<br><br>
             </p>
@@ -409,7 +421,15 @@ var question = {
 var check = {
     timeline: [{
         type: jsPsychHtmlButtonResponse,
-        stimulus: `回答错误，重新回答`,
+        stimulus: `
+        <div>
+            <p style="font-size:35px">
+                <strong>回答错误，请看信任博弈简易流程图，然后重新回答。</strong>
+            <p>
+            <img
+                src="${url}/trust_game/brief.jpg">
+        </div>
+        `,
         choices: ['继续']
     }],
     conditional_function: function () {
@@ -433,12 +453,11 @@ timeline.push(tests)
 var instru_tg2 = {
     type: jsPsychInstructions,
     pages: [`
-    <div style="width:80%">
-        <p style="font-size:30px;text-align:left">
-        接下来正式开始，游戏共有10轮。
-        请注意，每一轮游戏结束时您不会知道本轮游戏中对方的选择。
-        选择投资请按F键，选择不投资请按J键。
-        游戏结束后将随机抽取其中1轮的收益的一半金额作为实验报酬的奖金。
+    <div>
+        <p style="font-size:30px;text-align:left;line-height:150%">
+            接下来正式开始，游戏共有10轮。<br>
+            请注意，每一轮游戏结束时您不会知道本轮游戏中对方的选择。<br>
+            游戏结束后将随机抽取其中1轮的收益的一半金额作为实验报酬的奖金。
         </p>
         <p style="font-size:36px;text-align:center;line-height:150%">
             <strong>请点击下方按钮或按空格键继续</strong>
@@ -494,12 +513,6 @@ var trial_tg = {
                 <p style="font-size:36px;text-align:left;line-height:150%">
                     对方${jsPsych.timelineVariable('i')}，属于${jsPsych.timelineVariable('g')}。
                 </p>
-                <div style="float: left;">
-                    <p style="font-size: 45px;">投资（F）</p>
-                </div>
-                <div style="float: right;">
-                    <p style="font-size: 45px;">不投资（J）</p>
-                </div>
             </div>
         `
     },
@@ -512,7 +525,7 @@ var end_tg = {
     stimulus: function () {
         var choice = jsPsych.data.get().last(1).values()[0]
         if (choice.response == 0) {
-            return '<p style="font-size:40px;text-align:center;"您选择不投资，本轮游戏结束。</p>'
+            return '<p style="font-size:40px;text-align:center;">您选择不投资，本轮游戏结束。</p>'
         } else {
             return '<p style="font-size:40px;text-align:center;">您选择投资，对方已完成选择，本轮游戏结束.</p>'
         }
@@ -539,9 +552,9 @@ timeline.push(trust_game)
 
 var manipulation_check = {
     type: jsPsychSurveyLikert,
-    questions:[
-        {prompt: '在过去30分钟内，你是否产生过与死亡有关的想法？', name: 'MC1', labels:['1 完全没有', '2', '3', '4', '5', '6', '7 一定有'], required: true},
-        {prompt: '在过去30分钟内，你在多大程度上想到了死亡？', name: 'MC2', labels:['1 非常低或没有', '2', '3', '4', '5', '6', '7 非常高'], required: true},
+    questions: [
+        { prompt: '在过去30分钟内，你是否产生过与死亡有关的想法？', name: 'MC1', labels: ['1 完全没有', '2', '3', '4', '5', '6', '7 一定有'], required: true },
+        { prompt: '在过去30分钟内，你在多大程度上想到了死亡？', name: 'MC2', labels: ['1 非常低或没有', '2', '3', '4', '5', '6', '7 非常高'], required: true },
     ],
     preamble: '请回答下面两个问题',
     button_label: '继续'
@@ -553,19 +566,20 @@ timeline.push(manipulation_check)
 var debriefing = {
     type: jsPsychInstructions,
     pages: [`
-    <style>
-        p {
-            font-size: 24px;
-            line-height: 150%;
-            text-indent: 2em
-        }
-    </style>
-    <div>
+    <div style="width:80%;margin:auto">
+        <style>
+            p {
+                font-size: 24px;
+                line-height: 150%;
+                text-indent: 2em;
+                text-align: left;
+            }
+        </style>
         <h1 style="text-align:center">
             实验完成
         </h1>
         <p>
-            下面为您解释本次实验的真正目的，以及各部分的作用。
+            您现在可以按「ESC」键退出全屏。下面为您解释本次实验的真正目的，以及各部分的作用。
         </p>
         <p>
             本次实验的目的是了解死亡想法对于信任的影响。如果您在之前完成了死亡焦虑问卷，那么您属于实验组，如果您在之前完成考试焦虑问卷，则属于控制组。
@@ -580,7 +594,9 @@ var debriefing = {
             接下来请将浏览器下载的数据文件(文件名为参与者_{随机数字和字母}csv文件，类似于“参与者_6yol3het.csv”)上传到Credamo问卷中。
     </div>
     `],
-
+    button_label_next: '完成',
+    button_label_previous: '',
+    show_clickable_nav: true,
 }
 timeline.push(debriefing)
 
