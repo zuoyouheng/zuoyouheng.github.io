@@ -96,7 +96,8 @@ var starting_page = {
     </p>
     `,
     button_label: '点击此处全屏开始',
-    delay_after: 100
+    delay_after: 100,
+    data: { section: 'fullscreen' }
 }
 timeline.push(starting_page)
 
@@ -113,7 +114,8 @@ var greetings = {
         `
     ],
     show_clickable_nav: false,
-    key_forward: ' '
+    key_forward: ' ',
+    data: { section: 'instru' }
 }
 timeline.push(greetings)
 
@@ -151,7 +153,8 @@ var instru_mg = {
     show_clickable_nav: true,
     button_label_previous: '返回',
     button_label_next: '继续',
-    key_forward: ' '
+    key_forward: ' ',
+    data: { section: 'instru' },
 }
 timeline.push(instru_mg)
 
@@ -243,7 +246,8 @@ var instru_mg2 = {
     show_clickable_nav: true,
     button_label_previous: '返回',
     button_label_next: '继续',
-    key_forward: ' '
+    key_forward: ' ',
+    data: { section: 'instru' },
 }
 timeline.push(instru_mg2)
 
@@ -284,7 +288,8 @@ var instru_mg3 = {
     show_clickable_nav: true,
     button_label_previous: '返回',
     button_label_next: '继续',
-    key_forward: ' '
+    key_forward: ' ',
+    data: { section: 'instru' },
 }
 timeline.push(instru_mg3)
 
@@ -378,7 +383,8 @@ var instru_tg = {
     show_clickable_nav: true,
     button_label_previous: '返回',
     button_label_next: '继续',
-    key_forward: ' '
+    key_forward: ' ',
+    data: { section: 'instru' },
 }
 timeline.push(instru_tg)
 
@@ -463,7 +469,8 @@ var instru_tg2 = {
     show_clickable_nav: true,
     button_label_previous: '返回',
     button_label_next: '继续',
-    key_forward: ' '
+    key_forward: ' ',
+    data: { section: 'instru' },
 }
 timeline.push(instru_tg2)
 
@@ -598,6 +605,5 @@ var debriefing = {
     }
 }
 timeline.push(debriefing)
-
 
 jsPsych.run(timeline)
