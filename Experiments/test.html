@@ -55,25 +55,59 @@
         //     }
         //     timeline.push(debriefing)
 
-        var likert_scale = [
-            "Strongly Disagree",
-            "Disagree",
-            "Neutral",
-            "Agree",
-            "Strongly Agree"
-        ];
+        // var likert_scale = [
+        //     "Strongly Disagree",
+        //     "Disagree",
+        //     "Neutral",
+        //     "Agree",
+        //     "Strongly Agree"
+        // ];
 
-        var trial = {
+        // var trial = {
+        //     type: jsPsychSurveyLikert,
+        //     questions: [
+        //         { prompt: "I like vegetables.", name: 'Vegetables', labels: likert_scale },
+        //         { prompt: "I like fruit.", name: 'Fruit', labels: likert_scale },
+        //         { prompt: "I like meat.", name: 'Meat', labels: likert_scale },
+        //     ],
+        //     randomize_question_order: true,
+        //     scale_width: 1000,
+        // };
+        // timeline.push(trial)
+        var likert7 = [
+            "非常不赞同",
+            "不赞同",
+            "比较不赞同",
+            "不确定",
+            "比较赞同",
+            "赞同",
+            "非常赞同"
+        ]
+
+        var EE = {
             type: jsPsychSurveyLikert,
             questions: [
-                { prompt: "I like vegetables.", name: 'Vegetables', labels: likert_scale },
-                { prompt: "I like fruit.", name: 'Fruit', labels: likert_scale },
-                { prompt: "I like meat.", name: 'Meat', labels: likert_scale },
+                { prompt: `1.数量估计倾向相同的人都很相似。`, name: "EE1", labels: likert7, required: true },
+                { prompt: `2.一个人的数量估计倾向能够很大程度上说明他/她的人格特点。`, name: "EE2", labels: likert7, required: true },
+                { prompt: `3.尽管数量估计倾向相同的人之间有着明显的差异，但是本质上他们是一样的。`, name: "EE3", labels: likert7, required: true },
+                { prompt: `4.数量估计倾向相同的人在很多方面都是相同的。`, name: "EE4", labels: likert7, required: true },
+                { prompt: `5.属于“高估者”或是“低估者”在很大程度上决定了一个人的身份。`, name: "EE5", labels: likert7, required: true },
+                { prompt: `6.数量估计倾向相同的人存在一些表面上的共同点，但实际上他们有很大的不同。`, name: "EE6", labels: likert7, required: true },
+                { prompt: `7.数量估计倾向相同的人之间通常有很大的差异。`, name: "EE7", labels: likert7, required: true },
+                { prompt: `8.知道一个人属于“高估者”还是“低估者”并不足以判断一个人。`, name: "EE8", labels: likert7, required: true },
+                { prompt: `9.数量估计倾向相同的人除了表面上的相似或不同之外，还有很多潜在的共同特征。`, name: "EE9", labels: likert7, required: true },
+                { prompt: `10.数量估计倾向相同的人通常没有多少共同之处。`, name: "EE10", labels: likert7, required: true },
+                { prompt: `11.属于“高估者”或“低估者”不能说明一个人的具体情况。`, name: "EE11", labels: likert7, required: true },
+                { prompt: `12.数量估计倾向相同的人通常差异很大，尽管他们乍一看很像。`, name: "EE12", labels: likert7, required: true },
             ],
-            randomize_question_order: true,
-            scale_width: 1000,
-        };
-        timeline.push(trial)
+            preamble: `
+    <p style="font-size:24px;text-align:left;"><strong>以下是一些关于数量估计倾向的描述，请评价你对这些描述的赞同程度。</strong></p>
+    `,
+            button_label: "继续",
+
+        }
+        timeline.push(EE)
+
 
         jsPsych.run(timeline)
     </script>
