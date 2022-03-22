@@ -58,9 +58,9 @@
 /* borrowing Bootstrap style for btn elements, but combining styles a bit */
 .jspsych-btn {
   display: inline-block;
-  padding: 18px 36px;
+  padding: 10px 15px;
   margin: 0px;
-  font-size: 30px;
+  font-size: 25px;
   font-weight: 400;
   font-family: "Open Sans", "Arial", sans-serif;
   cursor: pointer;
@@ -69,7 +69,7 @@
   white-space: nowrap;
   vertical-align: middle;
   background-image: none;
-  border: 1px solid transparent;
+  border: 3px solid transparent;
   border-radius: 4px;
   color: #333;
   background-color: #fff;
