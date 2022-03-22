@@ -1,12 +1,6 @@
 // initialization
 
-var jsPsych = initJsPsych({
-    on_finish: function () {
-        jsPsych.data.get().filter({ section: 'trust_game' }).localSave('csv', `参与者_${subject_id}.csv`)
-        // on_finish: function () {
-        //     jsPsych.data.displayData();
-    }
-})
+var jsPsych = initJsPsych()
 
 const subject_id = jsPsych.randomization.randomID(8)
 const url = "https://gitee.com/zyyh2020/zuoyouheng.github.io/raw/main/Experiments/materials"
@@ -323,9 +317,11 @@ var EE = {
         { prompt: `12.数量估计倾向相同的人通常差异很大，尽管他们乍一看很像。`, name: "EE12", labels: likert7, required: true },
     ],
     preamble: `
-    <p style="font-size:24px;text-align:left;">以下是一些关于数量估计倾向的描述，请评价你对这些描述的赞同程度。</p>
+    <p style="font-size:24px;text-align:left;"><strong>以下是一些关于数量估计倾向的描述，请评价你对这些描述的赞同程度。</strong></p>
     `,
-    button_label: "继续"
+    button_label: "继续",
+    data: { section: 'EE' }
+
 }
 timeline.push(EE)
 
@@ -556,7 +552,7 @@ var manipulation_check = {
         { prompt: '在过去30分钟内，你是否产生过与死亡有关的想法？', name: 'MC1', labels: ['1 完全没有', '2', '3', '4', '5', '6', '7 一定有'], required: true },
         { prompt: '在过去30分钟内，你在多大程度上想到了死亡？', name: 'MC2', labels: ['1 非常低或没有', '2', '3', '4', '5', '6', '7 非常高'], required: true },
     ],
-    preamble: '请回答下面两个问题',
+    preamble: '<p style="font-size:24px;text-align:left"><strong>请回答下面两个问题</strong></p>',
     button_label: '继续'
 }
 timeline.push(manipulation_check)
@@ -597,6 +593,9 @@ var debriefing = {
     button_label_next: '完成',
     button_label_previous: '',
     show_clickable_nav: true,
+    on_start: function () {
+        jsPsych.data.get().localSave('csv', `参与者_${subject_id}.csv`)
+    }
 }
 timeline.push(debriefing)
 
