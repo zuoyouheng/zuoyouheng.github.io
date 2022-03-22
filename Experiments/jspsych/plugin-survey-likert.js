@@ -92,7 +92,7 @@ var jsPsychSurveyLikert = (function (jspsych) {
           // inject CSS for trial
           html += '<style id="jspsych-survey-likert-css">';
           html +=
-              ".jspsych-survey-likert-statement { display:block; font-size: 28px; padding-top: 40px; margin-bottom:10px; }" +
+              ".jspsych-survey-likert-statement { display:block; font-size: 28px; padding-top: 40px; margin-bottom:10px; text-align: left}" +
                   ".jspsych-survey-likert-opts { list-style:none; width:" +
                   w +
                   "; margin:auto; padding:0 50px 35px; display:block; font-size: 24px; line-height:1.1em; }" +
