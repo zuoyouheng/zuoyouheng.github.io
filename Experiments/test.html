@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>测试</title>
+    <script src="jspsych\jspsych.js"></script>
+    <script src="jspsych\plugin-preload.js"></script>
+    <script src="jspsych\plugin-fullscreen.js"></script>
+    <script src="jspsych\plugin-instructions.js"></script>
+    <script src="jspsych\plugin-html-button-response.js"></script>
+    <script src="jspsych\plugin-html-keyboard-response.js"></script>
+    <script src="jspsych\plugin-survey-likert.js"></script>
+    <link href="jspsych\jspsych.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <script>
+        var jsPsych = initJsPsych()
+        var timeline = []
+        var debriefing = {
+            type: jsPsychInstructions,
+            pages: [`
+    <div style="width:80%;margin:auto">
+        <style>
+            p {
+                font-size: 24px;
+                line-height: 150%;
+                text-indent: 2em;
+                text-align: left;
+            }
+        </style>
+        <h1 style="text-align:center">
+            实验完成
+        </h1>
+        <p>
+            您现在可以按「ESC」键退出全屏。下面为您解释本次实验的真正目的，以及各部分的作用。
+        </p>
+        <p>
+            本次实验的目的是了解死亡想法对于信任的影响。如果您在之前完成了死亡焦虑问卷，那么您属于实验组，如果您在之前完成考试焦虑问卷，则属于控制组。
+        </p>
+        <p>
+            数量估计倾向测试（即鉴别您属于“高估者”或“低估者”的测试）是一个虚假反馈的测试，最终呈现的结果只是随机选取的。而且“高估者”或“低估者”只是一个用来分类的标签，没有任何的实际意义。
+        </p>
+        <p>
+            最后阶段的“投资游戏”实际上是一种测量信任的方法。因为信任是一种承担风险的行为，因此投资游戏中是否选择投资可以反映出您对于对方的信任程度。本次实验的目的就是比较对于内群体（和你一样的人）以及外群体（和你不同的人）的信任的区别。投资游戏并没有真地在进行，我们只会记录您的选择作为实验结果。
+        </p>
+        <p>
+            接下来请将浏览器下载的数据文件(文件名为“参与者_{随机数字和字母}.csv”，类似于“参与者_6yol3het.csv”)上传到Credamo问卷中。
+    </div>
+    `],
+            button_label_next: '完成',
+            button_label_previous: '',
+            show_clickable_nav: true,
+        }
+        timeline.push(debriefing)
+        jsPsych.run(timeline)
+    </script>
+</body>
+
+</html>
