@@ -129,7 +129,7 @@ var instru_mg = {
         `
         <div style="width:80%;margin:auto;">
             <p style="font-size:36px;text-align:left;line-height:150%">
-                心理学研究发现,在估计物体的数量时，有一些人的估计值高于实际值，我们称其为<strong><font color="red">“高估者”</font></strong>；另一些人则相反，称为<strong><font color="red">“低估者”</font></strong>。总人群中高估者和低估者大约各占50%，二者没有优劣之分。接下来我们将通过测试来确定您属于“高估者”或是“低估者”。<br><br>
+                心理学研究发现,人在估计物体的数量时存在两种不同的倾向：有一些人的估计值高于实际值，我们称其为<strong><font color="red">“高估者”</font></strong>；另一些人则相反，称为<strong><font color="red">“低估者”</font></strong>。总人群中高估者和低估者大约各占50%，二者没有优劣之分。接下来我们将通过测试来确定您属于“高估者”或是“低估者”。<br><br>
             </p>
             <p style="font-size:36px;text-align:center;line-height:150%">
                 <strong>请点击下方按钮或按空格键继续</strong>
@@ -233,7 +233,7 @@ var instru_mg2 = {
     type: jsPsychInstructions,
     pages: [
         `
-        <div style="width:80%;margin:auto">
+        <div style="margin:auto">
             <p style="font-size:36px;text-align:center;line-height:150%">
                 练习结束，接下来是正式测试<br><br>
             </p>
@@ -271,6 +271,18 @@ if (over[0]) {
     var outgroup = "高估者"
 }
 
+var loading_mg = {
+    type: jsPsychHtmlKeyboardResponse,
+    stimulus: `
+    <p style="font-size:45px;text-align:center">
+    正在计算结果
+    </p>
+    `,
+    choices: 'NO_KEYS',
+    trial_duration: '468'
+}
+timeline.push(loading_mg)
+
 var instru_mg3 = {
     type: jsPsychInstructions,
     pages: [`
@@ -278,7 +290,6 @@ var instru_mg3 = {
         <p style="font-size:36px;line-height:150%;text-align:left">
             您的测试结果显示，在估计物体数量时，您的估计值更倾向于${estimate}实际数量，
             所以您属于<strong>${ingroup}</strong>。
-            心理学研究结果表明，<strong>高估者</strong>和<strong>低估者</strong>在人格、道德和智力等方面并没有显著差异。<br><br>
         </p>
         <p style="font-size:36px;text-align:center;line-height:150%">
             <strong>请点击下方按钮或按空格键继续</strong>
@@ -322,7 +333,7 @@ var EE = {
         { prompt: `12.数量估计倾向相同的人通常差异很大，尽管他们乍一看很像。`, name: "EE12", labels: likert7, required: true },
     ],
     preamble: `
-    <p style="font-size:24px;text-align:left;"><strong>以下是一些关于数量估计倾向的描述，请评价你对这些描述的赞同程度。</strong></p>
+    <p style="font-size:24px;text-align:left;"><strong>以下是一些关于人的数量估计倾向的描述，请评价你对这些描述的赞同程度。</strong></p>
     `,
     button_label: "继续",
     data: { section: 'EE' }
@@ -585,16 +596,16 @@ var debriefing = {
             您现在可以按「ESC」键退出全屏。下面为您解释本次实验的真正目的，以及各部分的作用。
         </p>
         <p>
-            本次实验的目的是了解死亡想法对于信任的影响。如果您在之前完成了死亡焦虑问卷，那么您属于实验组，如果您在之前完成考试焦虑问卷，则属于控制组。
+            本次实验的目的是了解死亡想法对于信任的影响。如果您在之前回答了两个关于死亡的问题，那么您属于实验组；如果您在之前回答了两个关于牙痛的问题，那么您属于控制组。
         </p>
         <p>
             数量估计倾向测试（即鉴别您属于“高估者”或“低估者”的测试）是一个虚假反馈的测试，最终呈现的结果只是随机选取的。而且“高估者”或“低估者”只是一个用来分类的标签，没有任何的实际意义。
         </p>
         <p>
-            最后阶段的“投资游戏”实际上是一种测量信任的方法。因为信任是一种承担风险的行为，因此投资游戏中是否选择投资可以反映出您对于对方的信任程度。本次实验的目的就是比较对于内群体（和你一样的人）以及外群体（和你不同的人）的信任的区别。投资游戏并没有真地在进行，我们只会记录您的选择作为实验结果。
+            最后阶段的“投资游戏”实际上是一种测量信任的方法。因为信任是一种承担风险的行为，因此投资游戏中是否选择投资可以反映出您对于对方的信任程度。本次实验的目的就是比较对于内群体（和你一样的人）以及外群体（和你不同的人）的信任的区别。投资游戏并没有真地在进行，我们只会记录您的选择作为实验结果。所有参与者都会得到相同数额的奖金（中等收益）。
         </p>
         <p>
-            接下来请将浏览器下载的数据文件(文件名为参与者_{随机数字和字母}csv文件，类似于“参与者_6yol3het.csv”)上传到Credamo问卷中。
+            接下来请将浏览器下载的数据文件(文件名为参与者_{随机数字和字母}csv文件，类似于“参与者_6yol3het.csv”)上传到Credamo问卷中。然后您可以关闭此页面了。
     </div>
     `],
     button_label_next: '完成',
