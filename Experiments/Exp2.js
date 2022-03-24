@@ -83,7 +83,7 @@ var starting_page = {
     message: `
     <p style="font: 18pt 微软雅黑; text-align: left; line-height: 150%">
         <strong>
-            接下来将进入本次实验的按键操作部分，时长大约5~10分钟，将在「全屏页面」中进行，<br>
+            接下来将进入本次实验的按键操作部分，时长大约5分钟，将在「全屏页面」中进行，<br>
             为保证最佳效果，请您<br>
             （1）在电脑中进行，使用主流浏览器打开本页面<br>
             &emsp;&emsp;（Chrome、Edge、Firefox、Safari等，不要用IE）<br>
