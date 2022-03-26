@@ -573,7 +573,8 @@ var manipulation_check = {
         { prompt: '在过去30分钟内，你在多大程度上想到了死亡？', name: 'MC2', labels: ['1 非常低或没有', '2', '3', '4', '5', '6', '7 非常高'], required: true },
     ],
     preamble: '<p style="font-size:24px;text-align:left"><strong>请回答下面两个问题</strong></p>',
-    button_label: '继续'
+    button_label: '继续',
+    data: {section: 'MC'}
 }
 timeline.push(manipulation_check)
 
