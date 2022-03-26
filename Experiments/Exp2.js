@@ -3,7 +3,7 @@
 var jsPsych = initJsPsych()
 
 const subject_id = jsPsych.randomization.randomID(8)
-const url = "https://gitee.com/zyyh2020/zuoyouheng.github.io/raw/main/Experiments/materials"
+const url = "http://r9cih24dp.hb-bkt.clouddn.com/materials"
 
 jsPsych.data.addProperties({subject_id: subject_id})
 
