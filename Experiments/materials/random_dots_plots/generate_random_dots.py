@@ -5,7 +5,7 @@ Created on Sat Nov  6 11:02:53 2021
 @author: zyh20
 """
 #%%
-import random
+
 from random_plots import RandomDotsPlot
 numbers = range(41, 61)
 for n in numbers:
