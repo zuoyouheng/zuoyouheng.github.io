@@ -249,9 +249,9 @@ var tutorial = {
     stimulus: tutorial_html,
     choices: ['继续'],
 }
-// timeline.push(greeting)
-// timeline.push(survey_1)
-// timeline.push(survey_2)
+timeline.push(greeting)
+timeline.push(survey_1)
+timeline.push(survey_2)
 timeline.push(tutorial)
 
 jsPsych.run(timeline)
