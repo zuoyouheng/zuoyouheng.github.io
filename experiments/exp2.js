@@ -211,47 +211,15 @@ var survey_2 = {
 
 // 信任博弈
 
-var tutorial_html = `
-    <div style="width:75%;margin:auto;">
-        <p style="text-align:left">
-            现在，您需要完成若干次<b>“投资游戏”</b>，我们将根据游戏结果来决定您获得的实验报酬中的浮动金额。接下来将为您介绍“投资游戏”的规则。
-        </p>
-        <p style="text-align:left">
-            投资游戏由两名参与者共同完成，一人的角色为“投资者”，另一人的角色为“接受者”。一次游戏的流程如下：<br>
-            ①游戏开始，投资者和接受者都持有10元的资金。<br>
-            ②投资者决定将自己持有的一部分资金x元交给接受者，0≤x≤10（x是整数），即投资者也可以选择不投资。<br>
-            ③如果x = 0，那么本次游戏完成，结算双方的收益：投资者得到10元，接受者得到10元。<br>
-            ④如果x > 0，那么投资金额将增值为3倍，接受者得到3x金额的资金，此时投资者持有的资金为10-x元，而接受者持有的资金为10+3x元。<br>
-            ⑤接受者决定将自己持有的一部分资金y元回报给投资者，0≤x≤10+3x（y是整数），即接受者可以选择不回报投资者。此时投资者持有的资金为10-x+y元，而接受者持有的资金为10+3x-y元。<br>
-            ⑥结算双方收益：投资者得到10-x+y元，而接受者得到10+3x-y元。
-        </p>
-    </div>
-    <div style="width:75%;margin:auto;">
-        <p style="text-align:left;top: 0%;float: left;">
-            <b>例1</b><br>
-            ①游戏开始，投资者持有10元，接受者持有10元。<br>
-            ②投资者的投资金额为0元。<br>
-            ③游戏结束，结算收益：投资者得到10元，接受者得到10元。<br>
-        </p>
-        <p style="text-align:left;top: 0%;float: right;">
-            <b>例2</b><br>
-            ①游戏开始，投资者持有10元，接受者持有10元。<br>
-            ②投资者的投资金额为5元。<br>
-            ③接受者得到15元，接受者持有25元。<br>
-            ④接受者回报给投资者8元，投资者持有18元，接受者持有17元。<br>
-            ⑤游戏结束，结算收益：投资者得到18元，接受者得到17元。<br>
-        </p>
-    </div>
-`
 
 var tutorial = {
-    type: jsPsychHtmlButtonResponse,
-    stimulus: tutorial_html,
-    choices: ['继续'],
+    type: jsPsychExternalHtml,
+    url: 'materials/trust_game_tutorial.html',
+    cont_btn: '继续'
 }
-timeline.push(greeting)
-timeline.push(survey_1)
-timeline.push(survey_2)
+// timeline.push(greeting)
+// timeline.push(survey_1)
+// timeline.push(survey_2)
 timeline.push(tutorial)
 
 jsPsych.run(timeline)
