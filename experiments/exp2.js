@@ -215,7 +215,7 @@ var survey_2 = {
 var tutorial = {
     type: jsPsychExternalHtml,
     url: 'materials/trust_game_tutorial.html',
-    cont_btn: '继续'
+    cont_btn: '继续',
 }
 // timeline.push(greeting)
 // timeline.push(survey_1)
