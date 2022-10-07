@@ -90,7 +90,7 @@ var jsPsychHtmlButtonResponse = (function (jspsych) {
                   buttons.push(trial.button_html);
               }
           }
-          html += '<div id="jspsych-html-button-response-btngroup" style="clear:both;margin:auto">';
+          html += '<div id="jspsych-html-button-response-btngroup">';
           for (var i = 0; i < trial.choices.length; i++) {
               var str = buttons[i].replace(/%choice%/g, trial.choices[i]);
               html +=
