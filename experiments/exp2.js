@@ -214,7 +214,7 @@ var survey_2 = {
 
 var tutorial = {
     type: jsPsychExternalHtml,
-    url: "materials/trust_game_tutorial.html",
+    url: "https://zuoyouheng.github.io/experiments/materials/trust_game_tutorial.html",
     cont_btn: "start",
 }
 // timeline.push(greeting)
