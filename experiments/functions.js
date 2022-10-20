@@ -5,13 +5,14 @@ function data_save() {
         [{ name: 'info' }, { name: 'survey1' }, { name: 'survey2' },
         { name: 'trust_game' }, { name: 'survey3' }, { name: 'priming' },]
     ).values()
-
+    
     let json = JSON.stringify(data_all)
 
     let data_info = data_all[0]
     let ID = data_info.subjectID
     let subject_name = data_info.subject_name
     csv += ID + ',' + subject_name + ',' + data_info.ms + ','
+    saveTextToFile(json, `${ID}_${subject_name}.json`)
 
     let data_survey1 = data_all[1].response
     for (key in data_survey1) {
@@ -51,7 +52,6 @@ function data_save() {
 
     document.getElementById('jspsych-content').innerHTML = `<p>本次实验完成，再次感谢您的参与</p>`
     saveTextToFile(csv, `${data_info.subjectID}_${subject_name}.csv`)
-    saveTextToFile(json, `${ID}_${subject_name}.json`)
 }
 
 function saveTextToFile(textstr, filename) {
