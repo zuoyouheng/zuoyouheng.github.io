@@ -178,7 +178,7 @@ const tutorial_check = `
 const pre_game_html = `
     <div class="instruction">
         <p class="instruction">
-            投资游戏总共将进行10次，您始终作为投资者进行游戏。每一次游戏中的“接受者”都是不同的参与者。在游戏全部结束之后，我们将会随机抽取其中一次游戏的结果，将您在此次游戏中得到的收益加入到您的实验报酬中。
+            投资游戏总共将进行10次，您始终作为投资者进行游戏。每一次游戏中的“接受者”都是不同的参与者。在游戏全部结束之后，我们将会随机抽取其中一次游戏的结果，将您在此次游戏中得到的收益按一定比例加入到您的实验报酬中。您在游戏中获得的额外收益为0~10元。
         </p>
         <p class="instruction">
             本次实验的参与者来自两个群体——中国大学生和外国留学生。在每一次游戏开始前您会知道此次游戏的接受者属于哪一个群体。游戏是异步进行的：我们事先采集和存储了一些参与者作为“接受者”进行游戏时的行为数据，当您作为“投资者”进行游戏时，我们将抽取一名“参与者”与您共同完成游戏。每一次游戏完成后，您暂时不会知道此次游戏的结果。当本次实验完成后我们将告知您获得了多少奖励金额。
@@ -288,9 +288,9 @@ var ms = {
     type: jsPsychHtmlButtonResponse,
     stimulus: function () {
         if (condition) {
-            return ms_control(ms_questions, "5:05")
+            return ms_control(ms_questions, "10:00")
         } else {
-            return ms_control(control_questions, "5:05")
+            return ms_control(control_questions, "10:00")
         }
     },
     choices: ['提交'],
