@@ -157,7 +157,7 @@ const tutorial_check = `
         <p>当您输入正确答案之后在输入框右侧会出现<span style="color:green">✔</span>，全部问题都回答正确之后才能继续</p>
         <p>如果投资者选择投资6元，那么</p>
         <p>
-            1. 接受者将获得多少金额？
+            1. 接受者将获得多少金额的投资（不包括原本持有的10元）？
             <input class="rule" type="number" oninput="tg_check(0)">
             <span class="right">✔</span>
         </p>
@@ -295,7 +295,7 @@ var ms = {
     },
     choices: ['提交'],
     button_html: btn_html_timer,
-    trial_duration: 1000 * (10 + 60*10)
+    trial_duration: 1000 * (10 + 60 * 10)
 }
 
 // 延迟任务、中介
@@ -436,7 +436,7 @@ var trust_game = {
                         } else {
                             return '<p>您选择不投资，本次游戏完成。</p>'
                         }
-                        
+
                     },
                     choices: 'NO_KEYS',
                     trial_duration: 800,
