@@ -4,24 +4,24 @@ function data_save() {
     let data_all = jsPsych.data.get().filter(
         [{ name: 'info' }, { name: 'survey1' }, { name: 'survey2' },
         { name: 'trust_game' }, { name: 'survey3' }, { name: 'priming' },]
-    ).values()
-    
-    let json = JSON.stringify(data_all)
+    )
 
-    let data_info = data_all[0]
+    let json = data_all.json()
+
+    let data_info = select('info')
     let ID = data_info.subjectID
     let subject_name = data_info.subject_name
     csv += ID + ',' + subject_name + ',' + data_info.ms + ','
     saveTextToFile(json, `${ID}_${subject_name}.json`)
 
-    let data_survey1 = data_all[1].response
+    let data_survey1 = select('survey1').response
     for (key in data_survey1) {
         if (key != 'instru') {
             csv += data_survey1[key] + ','
         }
     }
 
-    let data_survey2 = data_all[3].response
+    let data_survey2 = select('survey2').response
     for (key in data_survey2) {
         if (key == 'panas') {
             var panas = data_survey2[key]
@@ -33,7 +33,7 @@ function data_save() {
         }
     }
 
-    let data_tg = data_all.slice(4, 14)
+    let data_tg = data_all.filter({name: 'trust_game'}).values()
     let group_tag = ''
     let values = ''
     for (let i = 0; i < data_tg.length; i++) {
@@ -43,7 +43,7 @@ function data_save() {
     }
     csv += group_tag + values
 
-    let data_survey3 = data_all[14].response
+    let data_survey3 = select('survey3').response
     for (key in data_survey3) {
         if (key != 'instru') {
             csv += data_survey3[key] + ','
@@ -52,6 +52,10 @@ function data_save() {
 
     document.getElementById('jspsych-content').innerHTML = `<p>本次实验完成，再次感谢您的参与</p>`
     saveTextToFile(csv, `${data_info.subjectID}_${subject_name}.csv`)
+
+    function select(name = '') {
+        return data_all.filter({ name: name }).values()[0]
+    }
 }
 
 function saveTextToFile(textstr, filename) {
