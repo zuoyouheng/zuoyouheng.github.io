@@ -484,14 +484,14 @@ make_likert(
 
 var survey_3 = make_survey(survey_pages = [page_ingroup, page_outgroup, page_mc], survey_name = 'survey3')
 
-// timeline.push(preload)
-// timeline.push(start)
-// timeline.push(consent)
-// timeline.push(survey_1)
-// timeline.push(ms)
-// timeline.push(tutorial)
-// timeline.push(survey_2)
-// timeline.push(pre_game)
+timeline.push(preload)
+timeline.push(start)
+timeline.push(consent)
+timeline.push(survey_1)
+timeline.push(ms)
+timeline.push(tutorial)
+timeline.push(survey_2)
+timeline.push(pre_game)
 timeline.push(trust_game)
 timeline.push(survey_3)
 
