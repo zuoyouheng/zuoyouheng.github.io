@@ -33,7 +33,7 @@ function data_save() {
         }
     }
 
-    let data_tg = data_all.filter({name: 'trust_game'}).values()
+    let data_tg = data_all.filter({ name: 'trust_game' }).values()
     let group_tag = ''
     let values = ''
     for (let i = 0; i < data_tg.length; i++) {
@@ -115,7 +115,7 @@ function make_likert(page = [], scale_name = '', items = [], min = 1, max = 7, l
             required: true,
             name: function () {
                 if (items.length > 1) {
-                    return scale_name + (i+1)
+                    return scale_name + (i + 1)
                 } else {
                     return scale_name
                 }
@@ -167,6 +167,8 @@ function timer() {
         if (second.innerHTML == "5:00") {
             second.style.color = "green"
             button.disabled = false
+        } else if (second.innerHTML == "0:00") {
+            submit(tid)
         }
     }
 }
