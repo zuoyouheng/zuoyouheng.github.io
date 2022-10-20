@@ -295,7 +295,7 @@ var ms = {
     },
     choices: ['提交'],
     button_html: btn_html_timer,
-    trial_duration: 1000 * 60 * 10
+    trial_duration: 1000 * (10 + 60*10)
 }
 
 // 延迟任务、中介
