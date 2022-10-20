@@ -206,6 +206,11 @@ const trust_options = [
 
 // init
 
+var preload = {
+    type: jsPsychPreload,
+    auto_preload: true,
+}
+
 var condition
 
 
@@ -471,6 +476,7 @@ make_likert(
 
 var survey_3 = make_survey(survey_pages = [page_ingroup, page_outgroup, page_mc], survey_name = 'survey3')
 
+timeline.push(preload)
 timeline.push(start)
 timeline.push(consent)
 timeline.push(survey_1)
