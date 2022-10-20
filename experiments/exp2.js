@@ -475,11 +475,11 @@ for (let j = 0; j < 3; j++) {
 page_mc = [make_instru('<p class="survey-intro">请您根据自己此刻的真实感受回答下面两个问题：</p>')]
 make_likert(
     page = page_mc, scale_name = 'mc1', items = [items_mc[0]],
-    min = 1, max = 7, labels = ['完全没有', '一定有']
+    min = 1, max = 7, labels = ['一定有', '完全没有']
 )
 make_likert(
     page = page_mc, scale_name = 'mc2', items = [items_mc[1]],
-    min = 1, max = 7, labels = ['完全没有', '一定有']
+    min = 1, max = 7, labels = ['一定有', '完全没有']
 )
 
 var survey_3 = make_survey(survey_pages = [page_ingroup, page_outgroup, page_mc], survey_name = 'survey3')
