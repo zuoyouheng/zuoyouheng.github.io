@@ -99,7 +99,7 @@ function make_survey(
     }
 }
 
-function make_likert(page = [], scale_name = '', items = [], min = 1, max = 7, labels = ['非常不赞同', '非常赞同']) {
+function make_likert(page = [], scale_name = '', items = [], min = 1, max = 7, labels = ['非常赞同', '非常不赞同']) {
     for (let i = 0; i < items.length; i++) {
         page.push({
             type: 'likert',
