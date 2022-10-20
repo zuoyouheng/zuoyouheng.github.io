@@ -208,7 +208,7 @@ const trust_options = [
 
 var preload = {
     type: jsPsychPreload,
-    auto_preload: true,
+    images: ['fscs.png']
 }
 
 var condition
