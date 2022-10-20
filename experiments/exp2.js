@@ -278,7 +278,7 @@ var page_demography = [
 ]
 
 var page_IGTS = [make_instru(instru_IGTS)]
-make_likert(page = page_IGTS, scale_name = 'igts', items = igts_items)
+make_likert(page = page_IGTS, scale_name = 'igts', items = igts_items, labels = ['非常赞同', '非常不赞同'])
 
 var survey_1 = make_survey(survey_pages = [page_demography, page_IGTS], survey_name = 'survey1')
 
