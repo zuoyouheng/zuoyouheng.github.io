@@ -429,7 +429,15 @@ var trust_game = {
                 },
                 {
                     type: jsPsychHtmlKeyboardResponse,
-                    stimulus: '“接受者”已做出选择，本次游戏完成。',
+                    stimulus: function () {
+                        let invest = jsPsych.data.getLastTrialData().values()[0].response.trust
+                        if (invest != 0) {
+                            return '<p>“接受者”已做出选择，本次游戏完成。</p>'
+                        } else {
+                            return '<p>您选择不投资，本次游戏完成。</p>'
+                        }
+                        
+                    },
                     choices: 'NO_KEYS',
                     trial_duration: 800,
                     on_finish: function () {
@@ -476,14 +484,14 @@ make_likert(
 
 var survey_3 = make_survey(survey_pages = [page_ingroup, page_outgroup, page_mc], survey_name = 'survey3')
 
-timeline.push(preload)
-timeline.push(start)
-timeline.push(consent)
-timeline.push(survey_1)
-timeline.push(ms)
-timeline.push(tutorial)
-timeline.push(survey_2)
-timeline.push(pre_game)
+// timeline.push(preload)
+// timeline.push(start)
+// timeline.push(consent)
+// timeline.push(survey_1)
+// timeline.push(ms)
+// timeline.push(tutorial)
+// timeline.push(survey_2)
+// timeline.push(pre_game)
 timeline.push(trust_game)
 timeline.push(survey_3)
 
