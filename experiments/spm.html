@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+
+<head>
+    <title>简版 瑞文推理测验SPM 10题</title>
+    <script src="jspsych/jspsych.js"></script>
+    <script src="jspsych/plugin-preload.js"></script>
+    <script src="spm/functions.js"></script>
+    <script src="jspsych/plugin-html-button-response.js"></script>
+    <script src="jspsych/plugin-html-keyboard-response.js"></script>
+    <link href="jspsych/jspsych.css" rel="stylesheet" type="text/css" />
+
+    <style>
+        body {
+            font-size: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        div.instru {
+            width: 50%;
+            margin: auto;
+            text-align: left;
+            text-indent: 2em;
+        }
+
+        p.img {
+            text-align: center;
+        }
+
+        p.quiz {
+            font-size: larger;
+            clear: both;
+        }
+
+        p.timer {
+            float: left;
+            font-size: 40px;
+            font-weight: bolder;
+            color: green;
+        }
+
+        div.options {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            font-size: 25px;
+        }
+
+        img.demo {
+            width: 60%;
+        }
+
+        img.quiz {
+            float: left;
+        }
+
+        input[type="radio"] {
+            width: 25px;
+            height: 25px;
+            vertical-align: middle;
+            text-align: left;
+        }
+
+        label {
+            vertical-align: middle;
+        }
+
+        .jspsych-btn {
+            padding: 0.5em 1em;
+            font-size: large;
+            font-weight: bold;
+        }
+
+        span.result {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <script src="spm/exp.js"></script>
+</body>
+
+</html>
