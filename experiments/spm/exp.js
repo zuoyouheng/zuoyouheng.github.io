@@ -81,7 +81,7 @@ var processing = {
     type: jsPsychHtmlKeyboardResponse,
     stimulus: `<p>计算中</p>`,
     choices: 'NO_KEYS',
-    trial_duration: 300,
+    trial_duration: 600,
 }
 timeline.push(processing)
 
