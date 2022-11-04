@@ -91,7 +91,7 @@ function make_quiz(i) {
     let quiz = `
     <div>
         <img src="spm/quiz${i}.jpg" onload="tid=setInterval(timer, 1000)" class="quiz">
-        <p class="timer" id="timer">20</p>
+        <p class="timer" id="timer">30</p>
     </div>
     <div>
         <p class="quiz">请选择最适合填入空缺处的图片</p>
