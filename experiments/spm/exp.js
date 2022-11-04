@@ -70,26 +70,7 @@ timeline.push(intro)
 for (i = 1; i < 11; i++) {
     timeline.push({
         type: jsPsychHtmlButtonResponse,
-        stimulus: `
-        <div>
-            <img src="spm/quiz${i}.jpg" onload="tid=setInterval(timer, 1000)" class="quiz">
-            <p class="timer" id="timer">20</p>
-        </div>
-        <div>
-        <p class="quiz">请选择最适合填入空缺处的图片</p>
-        </div>
-        <div class="options">
-            <span><input type="radio" name="option" id="option-1" onclick="check()"><label for="option-1">1</label></span>
-            <span><input type="radio" name="option" id="option-2" onclick="check()"><label for="option-2">2</label></span>
-            <span><input type="radio" name="option" id="option-3" onclick="check()"><label for="option-3">3</label></span>
-        </div>
-        <div class="options">
-            <span><input type="radio" name="option" id="option-4" onclick="check()"><label for="option-4">4</label></span>
-            <span><input type="radio" name="option" id="option-5" onclick="check()"><label for="option-5">5</label></span>
-            <span><input type="radio" name="option" id="option-6" onclick="check()"><label for="option-6">6</label></span>
-        </div>
-        <br>
-        `,
+        stimulus: make_quiz(i),
         choices: ['确定'],
         trial_duration: 21 * 1000,
         button_html: btn_timer
@@ -104,3 +85,49 @@ for (i = 1; i < 11; i++) {
 // timeline.push(processing)
 
 jsPsych.run(timeline)
+
+function make_quiz(i) {
+    let quiz = `
+    <div>
+        <img src="spm/quiz${i}.jpg" onload="tid=setInterval(timer, 1000)" class="quiz">
+        <p class="timer" id="timer">20</p>
+    </div>
+    <div>
+        <p class="quiz">请选择最适合填入空缺处的图片</p>
+    </div>
+    `
+    let six = `
+        <div class="options">
+            <span><input type="radio" name="option" id="option-1" onclick="check()"><label for="option-1">1</label></span>
+            <span><input type="radio" name="option" id="option-2" onclick="check()"><label for="option-2">2</label></span>
+            <span><input type="radio" name="option" id="option-3" onclick="check()"><label for="option-3">3</label></span>
+        </div>
+        <div class="options">
+            <span><input type="radio" name="option" id="option-4" onclick="check()"><label for="option-4">4</label></span>
+            <span><input type="radio" name="option" id="option-5" onclick="check()"><label for="option-5">5</label></span>
+            <span><input type="radio" name="option" id="option-6" onclick="check()"><label for="option-6">6</label></span>
+        </div>
+        <br>
+    `
+
+    let eight = `
+    <div class="options">
+        <span><input type="radio" name="option" id="option-1" onclick="check()"><label for="option-1">1</label></span>
+        <span><input type="radio" name="option" id="option-2" onclick="check()"><label for="option-2">2</label></span>
+        <span><input type="radio" name="option" id="option-3" onclick="check()"><label for="option-3">3</label></span>
+        <span><input type="radio" name="option" id="option-4" onclick="check()"><label for="option-4">4</label></span>
+    </div>
+    <div class="options">
+        <span><input type="radio" name="option" id="option-5" onclick="check()"><label for="option-5">5</label></span>
+        <span><input type="radio" name="option" id="option-6" onclick="check()"><label for="option-6">6</label></span>
+        <span><input type="radio" name="option" id="option-7" onclick="check()"><label for="option-6">7</label></span>
+        <span><input type="radio" name="option" id="option-8" onclick="check()"><label for="option-6">8</label></span>
+    </div>
+    <br>
+    `
+    if (i < 3) {
+        return quiz + six
+    }
+
+    return quiz+eight
+}
