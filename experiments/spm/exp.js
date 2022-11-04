@@ -77,12 +77,13 @@ for (i = 1; i < 11; i++) {
     })
 }
 
-// var processing = {
-//     type: jsPsychHtmlKeyboardResponse,
-//     stimulus: result_html,
-//     choices: 'NO_KEYS',
-// }
-// timeline.push(processing)
+var processing = {
+    type: jsPsychHtmlKeyboardResponse,
+    stimulus: `<p>计算中</p>`,
+    choices: 'NO_KEYS',
+    trial_duration: 300,
+}
+timeline.push(processing)
 
 jsPsych.run(timeline)
 
