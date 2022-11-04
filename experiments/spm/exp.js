@@ -72,8 +72,11 @@ for (i = 1; i < 13; i++) {
         type: jsPsychHtmlButtonResponse,
         stimulus: make_quiz(i),
         choices: ['确定'],
-        trial_duration: 21 * 1000,
-        button_html: btn_timer
+        trial_duration: 31 * 1000,
+        button_html: btn_timer,
+        on_finish: function() {
+            clearInterval(tid)
+        }
     })
 }
 
