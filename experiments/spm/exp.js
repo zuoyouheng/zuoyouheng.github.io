@@ -36,7 +36,7 @@ const instru_html = `
 
 const result_html = `
     <h1>
-        经计算，你的分数<span class="result">高于25%的人。</span>
+        <span class="result">非常遗憾。</span>经计算，你的分数<span class="result">高于25%的人。</span>
     </h1>
 `
 
@@ -67,7 +67,7 @@ var intro = {
 }
 timeline.push(intro)
 
-for (i = 1; i < 11; i++) {
+for (i = 1; i < 13; i++) {
     timeline.push({
         type: jsPsychHtmlButtonResponse,
         stimulus: make_quiz(i),
